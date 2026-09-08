@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle2, Copy, Check } from 'lucide-react';
+import { Mail, MapPin, Send, CheckCircle2, Copy, Check } from 'lucide-react';
 import { personalInfo } from '../../data/portfolioData';
 import { SectionHeading } from '../ui/SectionHeading';
 
@@ -61,26 +61,6 @@ export function Contact() {
                 className="p-1 rounded-md text-gray-400 hover:text-gray-700 hover:bg-gray-100"
               >
                 {copied === 'email' ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
-              </button>
-            </div>
-
-            {/* Phone */}
-            <div className="p-3.5 rounded-xl bg-white border border-gray-200 shadow-xs flex items-center justify-between">
-              <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-emerald-600 shrink-0" />
-                <a 
-                  href={`tel:${personalInfo.phone.replace(/\s+/g, '')}`} 
-                  className="text-xs sm:text-sm font-medium text-gray-800 hover:text-emerald-600"
-                >
-                  {personalInfo.phone}
-                </a>
-              </div>
-              <button
-                onClick={() => handleCopy(personalInfo.phone, 'phone')}
-                aria-label="Copy Phone"
-                className="p-1 rounded-md text-gray-400 hover:text-gray-700 hover:bg-gray-100"
-              >
-                {copied === 'phone' ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
               </button>
             </div>
 

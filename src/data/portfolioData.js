@@ -6,14 +6,12 @@ export const personalInfo = {
   bioHeadline: "Final-year B.Tech CS & Business Systems student building practical analytics solutions with Excel, SQL, Power BI, Python, and Tableau.",
   fullBio: "I'm Ayush Das, a final-year B.Tech Computer Science & Business Systems student with a strong interest in data analytics and business intelligence. I enjoy transforming raw data into clean insights, interactive dashboards, and actionable recommendations. My toolkit includes Python, SQL, Excel, Power BI, Tableau, and data visualization libraries, supported by fundamentals in DSA, OOP, and Operating Systems.",
   email: "ayushdas599464@gmail.com",
-  phone: "+91 8927557626",
   location: "Kolkata, West Bengal, India",
   socialLinks: {
     github: "https://github.com/ayushdas-tech",
-    linkedin: "https://www.linkedin.com/in/ayush-das-analyst/", // placeholder / recruiter link
+    linkedin: "https://www.linkedin.com/in/ayush-das-analyst/",
     linkedinPlaceholder: "LINKEDIN_LINK_TO_BE_ADDED",
-    email: "mailto:ayushdas599464@gmail.com",
-    phone: "tel:+918927557626"
+    email: "mailto:ayushdas599464@gmail.com"
   },
   resumeUrl: "/resume.pdf"
 };
