@@ -1,5 +1,5 @@
 import React from 'react';
-import { Download, Mail, Github, Linkedin, ArrowRight } from 'lucide-react';
+import { Mail, Github, Linkedin, ArrowRight } from 'lucide-react';
 import { personalInfo } from '../../data/portfolioData';
 
 export function Hero() {
@@ -51,15 +51,6 @@ export function Hero() {
           >
             <span>View Projects</span>
             <ArrowRight className="w-3.5 h-3.5" />
-          </a>
-
-          <a
-            href={personalInfo.resumeUrl}
-            download="Ayush_Das_Resume.pdf"
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-medium bg-white hover:bg-gray-50 text-gray-800 border border-gray-300 transition-colors shadow-xs"
-          >
-            <Download className="w-3.5 h-3.5 text-gray-500" />
-            <span>Resume</span>
           </a>
 
           <a

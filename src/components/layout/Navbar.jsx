@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Download, Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { personalInfo } from '../../data/portfolioData';
 
 const navLinks = [
@@ -48,26 +48,14 @@ export function Navbar() {
           ))}
         </nav>
 
-        {/* Right CTA */}
-        <div className="flex items-center gap-3">
-          <a
-            href={personalInfo.resumeUrl}
-            download="Ayush_Das_Resume.pdf"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-900 text-white hover:bg-gray-800 transition-colors shadow-xs"
-          >
-            <Download className="w-3.5 h-3.5" />
-            <span>Resume</span>
-          </a>
-
-          {/* Mobile hamburger */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle navigation menu"
-            className="sm:hidden p-1.5 text-gray-600 hover:text-gray-900"
-          >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
-        </div>
+        {/* Mobile Hamburger */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle navigation menu"
+          className="sm:hidden p-1.5 text-gray-600 hover:text-gray-900"
+        >
+          {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        </button>
 
       </div>
 
