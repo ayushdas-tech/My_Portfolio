@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Download, Sun, Moon, Menu, X } from 'lucide-react';
-import { useTheme } from '../../context/ThemeContext';
+import { Download, Menu, X, ArrowUpRight } from 'lucide-react';
 import { personalInfo } from '../../data/portfolioData';
 
 const navLinks = [
@@ -11,7 +10,6 @@ const navLinks = [
 ];
 
 export function Navbar() {
-  const { theme, toggleTheme, isDark } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -26,55 +24,46 @@ export function Navbar() {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
       isScrolled 
-        ? 'py-3.5 bg-dark-950/80 backdrop-blur-md border-b border-slate-800/80 light:bg-white/80 light:border-slate-200' 
+        ? 'py-3.5 bg-white/90 backdrop-blur-md border-b border-gray-200/80 shadow-xs' 
         : 'py-5 bg-transparent'
     }`}>
-      <div className="max-w-4xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-3xl mx-auto px-6 flex items-center justify-between">
         
-        {/* Name / Home Link */}
-        <a href="#home" className="flex items-center gap-2 group">
-          <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 group-hover:scale-110 transition-transform" />
-          <span className="font-heading font-bold text-base tracking-tight text-slate-100 group-hover:text-cyan-400 transition-colors light:text-slate-900">
-            {personalInfo.name}
-          </span>
+        {/* Logo / Name */}
+        <a href="#home" className="flex items-center gap-2 font-semibold text-gray-900 text-sm tracking-tight hover:text-blue-600 transition-colors">
+          <span className="w-2 h-2 rounded-full bg-emerald-500" />
+          <span>{personalInfo.name}</span>
         </a>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden sm:flex items-center gap-6 text-sm font-medium text-slate-400 light:text-slate-600">
+        {/* Desktop Links */}
+        <nav className="hidden sm:flex items-center gap-6 text-sm text-gray-600 font-medium">
           {navLinks.map((link) => (
             <a 
               key={link.name} 
               href={link.href}
-              className="hover:text-slate-100 transition-colors light:hover:text-slate-900"
+              className="hover:text-gray-900 transition-colors"
             >
               {link.name}
             </a>
           ))}
         </nav>
 
-        {/* Action Controls */}
+        {/* Right CTA */}
         <div className="flex items-center gap-3">
           <a
             href={personalInfo.resumeUrl}
             download="Ayush_Das_Resume.pdf"
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-cyan-500 hover:bg-cyan-400 text-dark-950 transition-colors shadow-sm"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-900 text-white hover:bg-gray-800 transition-colors shadow-xs"
           >
             <Download className="w-3.5 h-3.5" />
             <span>Resume</span>
           </a>
 
-          <button
-            onClick={toggleTheme}
-            aria-label="Toggle Theme"
-            className="p-1.5 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-dark-800 transition-colors light:text-slate-600 light:hover:bg-slate-100 light:hover:text-slate-900"
-          >
-            {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-          </button>
-
+          {/* Mobile hamburger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle Menu"
-            className="sm:hidden p-1.5 rounded-lg text-slate-400 hover:text-slate-100 light:text-slate-600"
+            aria-label="Toggle navigation menu"
+            className="sm:hidden p-1.5 text-gray-600 hover:text-gray-900"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -82,15 +71,15 @@ export function Navbar() {
 
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="sm:hidden border-b border-slate-800 bg-dark-950/95 px-6 py-4 space-y-3 light:bg-white light:border-slate-200">
+        <div className="sm:hidden border-b border-gray-200 bg-white px-6 py-4 space-y-3">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors light:text-slate-700"
+              className="block text-sm font-medium text-gray-700 hover:text-blue-600"
             >
               {link.name}
             </a>

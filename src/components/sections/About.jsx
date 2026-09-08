@@ -1,63 +1,48 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Calendar, GraduationCap, Award } from 'lucide-react';
 import { personalInfo, educationList } from '../../data/portfolioData';
 import { SectionHeading } from '../ui/SectionHeading';
 
 export function About() {
   return (
-    <section id="about" className="py-16 border-t border-slate-800/60 light:border-slate-200">
-      <div className="max-w-4xl mx-auto px-6">
+    <section id="about" className="py-14 border-t border-gray-200">
+      <div className="max-w-3xl mx-auto px-6 space-y-6">
         
-        <SectionHeading
-          tag="ABOUT"
-          title="Background & Education"
-        />
+        <SectionHeading title="About & Education" />
 
-        <div className="space-y-8">
-          {/* Bio text */}
-          <p className="text-base text-slate-300 leading-relaxed light:text-slate-600">
-            {personalInfo.fullBio}
-          </p>
+        <p className="text-base text-gray-700 leading-relaxed">
+          {personalInfo.fullBio}
+        </p>
 
-          {/* Education cards */}
-          <div className="space-y-4">
-            <h3 className="text-sm font-mono uppercase tracking-wider text-slate-400 light:text-slate-500">
-              Education
-            </h3>
+        {/* Education Timeline */}
+        <div className="space-y-3 pt-2">
+          <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+            Education
+          </h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {educationList.map((edu, idx) => (
-                <div
-                  key={idx}
-                  className="p-5 rounded-2xl bg-dark-900/60 border border-slate-800 hover:border-slate-700 transition-colors light:bg-slate-50 light:border-slate-200"
-                >
-                  <div className="flex items-start justify-between gap-2 mb-1.5">
-                    <h4 className="font-heading font-bold text-base text-slate-100 light:text-slate-900">
-                      {edu.institution}
-                    </h4>
-                    <span className="px-2 py-0.5 rounded text-xs font-mono font-semibold bg-dark-800 text-cyan-300 border border-slate-700 light:bg-white light:text-slate-800 light:border-slate-300">
-                      {edu.score}
-                    </span>
-                  </div>
-
-                  <p className="text-sm text-slate-300 font-medium mb-2 light:text-slate-700">
-                    {edu.degree}
-                  </p>
-
-                  <div className="flex items-center gap-3 text-xs font-mono text-slate-400 light:text-slate-500">
-                    <span className="flex items-center gap-1">
-                      <Calendar className="w-3.5 h-3.5 text-slate-500" />
-                      {edu.period}
-                    </span>
-                    <span className="flex items-center gap-1 text-emerald-400">
-                      <Award className="w-3.5 h-3.5" />
-                      {edu.status}
-                    </span>
-                  </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            {educationList.map((edu, idx) => (
+              <div
+                key={idx}
+                className="p-4 rounded-xl bg-white border border-gray-200 shadow-xs space-y-1.5"
+              >
+                <div className="flex items-start justify-between gap-2">
+                  <h4 className="font-semibold text-sm text-gray-900">
+                    {edu.institution}
+                  </h4>
+                  <span className="px-2 py-0.5 rounded text-xs font-medium bg-blue-50 text-blue-700">
+                    {edu.score}
+                  </span>
                 </div>
-              ))}
-            </div>
+
+                <p className="text-xs text-gray-600 font-medium">
+                  {edu.degree}
+                </p>
+
+                <p className="text-xs text-gray-400">
+                  {edu.period} · {edu.status}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
 

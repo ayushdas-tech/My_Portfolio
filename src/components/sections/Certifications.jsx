@@ -1,47 +1,42 @@
 import React from 'react';
-import { Award, ShieldCheck } from 'lucide-react';
 import { certifications } from '../../data/portfolioData';
 import { SectionHeading } from '../ui/SectionHeading';
 
 export function Certifications() {
   return (
-    <section id="certifications" className="py-16 border-t border-slate-800/60 light:border-slate-200">
-      <div className="max-w-4xl mx-auto px-6">
+    <section id="certifications" className="py-14 border-t border-gray-200">
+      <div className="max-w-3xl mx-auto px-6 space-y-6">
         
-        <SectionHeading
-          tag="CERTIFICATIONS"
-          title="Verified Certifications"
-        />
+        <SectionHeading title="Certifications" />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
           {certifications.map((cert) => (
             <div
               key={cert.title}
-              className="p-5 rounded-2xl bg-dark-900/60 border border-slate-800 space-y-2.5 light:bg-slate-50 light:border-slate-200"
+              className="p-4 rounded-xl bg-white border border-gray-200 shadow-xs space-y-2"
             >
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono text-cyan-400 font-semibold light:text-cyan-600">
+                <span className="text-xs font-semibold text-blue-600">
                   {cert.issuer}
                 </span>
-                <span className="inline-flex items-center gap-1 text-[11px] font-mono text-emerald-400">
-                  <ShieldCheck className="w-3.5 h-3.5" />
+                <span className="text-[11px] font-medium text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
                   Verified
                 </span>
               </div>
 
-              <h3 className="font-heading font-bold text-base text-slate-100 light:text-slate-900">
+              <h3 className="font-semibold text-sm text-gray-900">
                 {cert.title}
               </h3>
 
-              <p className="text-xs text-slate-400 leading-relaxed light:text-slate-600">
+              <p className="text-xs text-gray-600 leading-relaxed">
                 {cert.description}
               </p>
 
-              <div className="flex flex-wrap gap-1.5 pt-1">
+              <div className="flex flex-wrap gap-1 pt-1">
                 {cert.skillsCovered.map((skill) => (
                   <span
                     key={skill}
-                    className="px-2 py-0.5 rounded text-[11px] font-mono bg-dark-800 text-slate-300 border border-slate-700/60 light:bg-white light:text-slate-700 light:border-slate-200"
+                    className="px-2 py-0.5 rounded text-[11px] bg-gray-100 text-gray-700"
                   >
                     {skill}
                   </span>
