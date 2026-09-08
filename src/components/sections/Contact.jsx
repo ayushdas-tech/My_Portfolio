@@ -28,7 +28,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-14 border-t border-gray-200">
+    <section id="contact" className="py-14 border-t border-[#e7e5df]">
       <div className="max-w-3xl mx-auto px-6 space-y-6">
         
         <SectionHeading 
@@ -40,17 +40,17 @@ export function Contact() {
           
           {/* Direct Channels */}
           <div className="space-y-3">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-[#57534e]">
               Feel free to reach out directly:
             </p>
 
             {/* Email */}
-            <div className="p-3.5 rounded-xl bg-white border border-gray-200 shadow-xs flex items-center justify-between">
+            <div className="p-3.5 rounded-xl bg-[#ffffff] border border-[#e7e5df] flex items-center justify-between">
               <div className="flex items-center gap-2.5 overflow-hidden">
-                <Mail className="w-4 h-4 text-blue-600 shrink-0" />
+                <Mail className="w-4 h-4 text-[#78716c] shrink-0" />
                 <a 
                   href={`mailto:${personalInfo.email}`} 
-                  className="text-xs sm:text-sm font-medium text-gray-800 hover:text-blue-600 truncate"
+                  className="text-xs sm:text-sm font-medium text-[#1c1917] hover:text-[#78716c] truncate"
                 >
                   {personalInfo.email}
                 </a>
@@ -58,33 +58,33 @@ export function Contact() {
               <button
                 onClick={() => handleCopy(personalInfo.email, 'email')}
                 aria-label="Copy Email"
-                className="p-1 rounded-md text-gray-400 hover:text-gray-700 hover:bg-gray-100"
+                className="p-1 rounded-md text-[#78716c] hover:text-[#1c1917] hover:bg-[#f0eee8]"
               >
                 {copied === 'email' ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
               </button>
             </div>
 
             {/* Location */}
-            <div className="p-3.5 rounded-xl bg-white border border-gray-200 shadow-xs flex items-center gap-2.5 text-xs text-gray-600">
-              <MapPin className="w-4 h-4 text-gray-400 shrink-0" />
+            <div className="p-3.5 rounded-xl bg-[#ffffff] border border-[#e7e5df] flex items-center gap-2.5 text-xs text-[#57534e]">
+              <MapPin className="w-4 h-4 text-[#78716c] shrink-0" />
               <span>{personalInfo.location}</span>
             </div>
           </div>
 
           {/* Clean Message Form */}
-          <div className="p-5 rounded-2xl bg-white border border-gray-200 shadow-xs">
+          <div className="p-5 rounded-2xl bg-[#ffffff] border border-[#e7e5df]">
             {status.state === 'success' ? (
               <div className="text-center py-6 space-y-2">
-                <CheckCircle2 className="w-8 h-8 text-emerald-500 mx-auto" />
-                <h4 className="font-semibold text-sm text-gray-900">
+                <CheckCircle2 className="w-8 h-8 text-emerald-600 mx-auto" />
+                <h4 className="font-semibold text-sm text-[#1c1917]">
                   Message Sent!
                 </h4>
-                <p className="text-xs text-gray-500">
+                <p className="text-xs text-[#57534e]">
                   {status.message}
                 </p>
                 <button
                   onClick={() => setStatus({ state: 'idle', message: '' })}
-                  className="mt-2 text-xs font-medium text-blue-600 hover:underline"
+                  className="mt-2 text-xs font-medium text-[#292524] underline"
                 >
                   Send another message
                 </button>
@@ -98,7 +98,7 @@ export function Contact() {
                     placeholder="Your Name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-3 py-2 rounded-lg bg-gray-50 border border-gray-200 text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:bg-white focus:border-blue-500 transition-colors"
+                    className="w-full px-3 py-2 rounded-lg bg-[#faf8f5] border border-[#dedad1] text-xs text-[#1c1917] placeholder-[#a8a29e] focus:outline-none focus:bg-white focus:border-[#292524] transition-colors"
                   />
                 </div>
 
@@ -109,7 +109,7 @@ export function Contact() {
                     placeholder="Your Email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-3 py-2 rounded-lg bg-gray-50 border border-gray-200 text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:bg-white focus:border-blue-500 transition-colors"
+                    className="w-full px-3 py-2 rounded-lg bg-[#faf8f5] border border-[#dedad1] text-xs text-[#1c1917] placeholder-[#a8a29e] focus:outline-none focus:bg-white focus:border-[#292524] transition-colors"
                   />
                 </div>
 
@@ -120,14 +120,14 @@ export function Contact() {
                     placeholder="Your Message"
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-3 py-2 rounded-lg bg-gray-50 border border-gray-200 text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:bg-white focus:border-blue-500 resize-none transition-colors"
+                    className="w-full px-3 py-2 rounded-lg bg-[#faf8f5] border border-[#dedad1] text-xs text-[#1c1917] placeholder-[#a8a29e] focus:outline-none focus:bg-white focus:border-[#292524] resize-none transition-colors"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={status.state === 'submitting'}
-                  className="w-full py-2 px-4 rounded-lg text-xs font-medium bg-gray-900 hover:bg-gray-800 text-white transition-colors flex items-center justify-center gap-1.5 shadow-xs"
+                  className="w-full py-2 px-4 rounded-lg text-xs font-medium bg-[#292524] hover:bg-[#44403c] text-[#fafaf9] transition-colors flex items-center justify-center gap-1.5"
                 >
                   <Send className="w-3.5 h-3.5" />
                   <span>{status.state === 'submitting' ? 'Sending...' : 'Send Message'}</span>

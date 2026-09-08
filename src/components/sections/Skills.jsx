@@ -4,7 +4,7 @@ import { SectionHeading } from '../ui/SectionHeading';
 
 export function Skills() {
   return (
-    <section id="skills" className="py-14 border-t border-gray-200">
+    <section id="skills" className="py-14 border-t border-[#e7e5df]">
       <div className="max-w-3xl mx-auto px-6 space-y-6">
         
         <SectionHeading 
@@ -16,9 +16,9 @@ export function Skills() {
           {skillCategories.map((category) => (
             <div
               key={category.title}
-              className="p-4 rounded-xl bg-white border border-gray-200 shadow-xs space-y-2.5"
+              className="p-4 rounded-xl bg-[#ffffff] border border-[#e7e5df] space-y-2.5"
             >
-              <h3 className="font-semibold text-sm text-gray-900">
+              <h3 className="font-semibold text-sm text-[#1c1917]">
                 {category.title}
               </h3>
 
@@ -26,7 +26,7 @@ export function Skills() {
                 {category.skills.map((skill) => (
                   <span
                     key={skill.name}
-                    className="px-2.5 py-1 rounded-md text-xs font-medium bg-gray-100 text-gray-800"
+                    className="px-2.5 py-1 rounded-md text-xs font-medium bg-[#eeece6] text-[#44403c]"
                   >
                     {skill.name}
                   </span>

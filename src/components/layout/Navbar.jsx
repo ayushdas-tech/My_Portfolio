@@ -24,24 +24,24 @@ export function Navbar() {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
       isScrolled 
-        ? 'py-3.5 bg-white/90 backdrop-blur-md border-b border-gray-200/80 shadow-xs' 
+        ? 'py-3.5 bg-[#f7f6f2]/90 backdrop-blur-md border-b border-[#e7e5df]' 
         : 'py-5 bg-transparent'
     }`}>
       <div className="max-w-3xl mx-auto px-6 flex items-center justify-between">
         
         {/* Logo / Name */}
-        <a href="#home" className="flex items-center gap-2 font-semibold text-gray-900 text-sm tracking-tight hover:text-blue-600 transition-colors">
-          <span className="w-2 h-2 rounded-full bg-emerald-500" />
+        <a href="#home" className="flex items-center gap-2 font-semibold text-[#1c1917] text-sm tracking-tight hover:text-[#57534e] transition-colors">
+          <span className="w-2 h-2 rounded-full bg-emerald-600" />
           <span>{personalInfo.name}</span>
         </a>
 
         {/* Desktop Links */}
-        <nav className="hidden sm:flex items-center gap-6 text-sm text-gray-600 font-medium">
+        <nav className="hidden sm:flex items-center gap-6 text-sm text-[#78716c] font-medium">
           {navLinks.map((link) => (
             <a 
               key={link.name} 
               href={link.href}
-              className="hover:text-gray-900 transition-colors"
+              className="hover:text-[#1c1917] transition-colors"
             >
               {link.name}
             </a>
@@ -52,7 +52,7 @@ export function Navbar() {
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle navigation menu"
-          className="sm:hidden p-1.5 text-gray-600 hover:text-gray-900"
+          className="sm:hidden p-1.5 text-[#78716c] hover:text-[#1c1917]"
         >
           {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
@@ -61,13 +61,13 @@ export function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="sm:hidden border-b border-gray-200 bg-white px-6 py-4 space-y-3">
+        <div className="sm:hidden border-b border-[#e7e5df] bg-[#f7f6f2] px-6 py-4 space-y-3">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-medium text-gray-700 hover:text-blue-600"
+              className="block text-sm font-medium text-[#44403c] hover:text-[#1c1917]"
             >
               {link.name}
             </a>

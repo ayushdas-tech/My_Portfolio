@@ -10,33 +10,33 @@ export function Hero() {
       <div className="max-w-3xl mx-auto px-6 space-y-5">
         
         {/* Availability Badge */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-medium text-emerald-800">
-          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#edeae3] border border-[#dedad1] text-xs font-medium text-[#44403c]">
+          <span className="w-2 h-2 rounded-full bg-emerald-600" />
           <span>Available for Data Analyst & BI Roles</span>
         </div>
 
         {/* Heading */}
         <div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-950 tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1c1917] tracking-tight">
             Hi, I'm Ayush Das.
           </h1>
-          <p className="text-lg sm:text-xl font-semibold text-blue-600 mt-1">
+          <p className="text-lg sm:text-xl font-medium text-[#57534e] mt-1">
             Data Analyst & B.Tech CSBS Student
           </p>
         </div>
 
         {/* Bio */}
-        <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-2xl">
+        <p className="text-base sm:text-lg text-[#57534e] leading-relaxed max-w-2xl">
           I turn raw data into decisions. I analyze datasets, build interactive dashboards, and diagnose business metrics using Python, SQL, Excel, Power BI, and Tableau.
         </p>
 
         {/* Stack Pills */}
         <div className="flex flex-wrap items-center gap-1.5 pt-1">
-          <span className="text-xs font-medium text-gray-400 mr-1">Toolkit:</span>
+          <span className="text-xs font-medium text-[#78716c] mr-1">Toolkit:</span>
           {tools.map((tool) => (
             <span
               key={tool}
-              className="px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-100 text-gray-700 border border-gray-200/80"
+              className="px-2.5 py-0.5 rounded-md text-xs font-medium bg-[#eeece6] text-[#44403c] border border-[#e2dfd7]"
             >
               {tool}
             </span>
@@ -47,7 +47,7 @@ export function Hero() {
         <div className="flex flex-wrap items-center gap-3 pt-3">
           <a
             href="#projects"
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-medium bg-blue-600 hover:bg-blue-700 text-white transition-colors shadow-xs"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-medium bg-[#292524] hover:bg-[#44403c] text-[#fafaf9] transition-colors"
           >
             <span>View Projects</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -55,9 +55,9 @@ export function Hero() {
 
           <a
             href={`mailto:${personalInfo.email}`}
-            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors"
+            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium text-[#57534e] hover:text-[#1c1917] hover:bg-[#edeae3] transition-colors border border-[#e2dfd7]"
           >
-            <Mail className="w-3.5 h-3.5 text-gray-500" />
+            <Mail className="w-3.5 h-3.5 text-[#78716c]" />
             <span>Email</span>
           </a>
 
@@ -65,9 +65,9 @@ export function Hero() {
             href={personalInfo.socialLinks.github}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors"
+            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium text-[#57534e] hover:text-[#1c1917] hover:bg-[#edeae3] transition-colors border border-[#e2dfd7]"
           >
-            <Github className="w-3.5 h-3.5 text-gray-500" />
+            <Github className="w-3.5 h-3.5 text-[#78716c]" />
             <span>GitHub</span>
           </a>
 
@@ -75,9 +75,9 @@ export function Hero() {
             href={personalInfo.socialLinks.linkedin}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors"
+            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium text-[#57534e] hover:text-[#1c1917] hover:bg-[#edeae3] transition-colors border border-[#e2dfd7]"
           >
-            <Linkedin className="w-3.5 h-3.5 text-gray-500" />
+            <Linkedin className="w-3.5 h-3.5 text-[#78716c]" />
             <span>LinkedIn</span>
           </a>
         </div>
